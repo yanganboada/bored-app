@@ -17,7 +17,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2%;
+  padding: 1% 2%;
   font-weight: lighter;
   text-shadow: 1px 1px darkblue;
   z-index: 999;
@@ -70,7 +70,7 @@ header {
   z-index: 999;
   display: flex;
   justify-content: space-around;
-  padding: 3vh;
+  padding: 2.5vh;
 }
 
 .blue-btn-block button{
@@ -145,11 +145,29 @@ header {
   display: none;
 }
 
+.bottom-nav{
+  width: 100%;
+  color:white;
+  background-color: #0336FF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2%;
+  height: 8vh;
+  position: sticky;
+}
+
+.bottom-nav img {
+  width: 30px;
+  height: 30px;
+}
+
+
+
 @media only screen and (max-width: 1024px) {
   .row{
   width: 100%;
   }
-
 }
 
 @media only screen and (max-width: 600px) {
