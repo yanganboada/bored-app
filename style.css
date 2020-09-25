@@ -1,0 +1,181 @@
+* {
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'ABeeZee', sans-serif;
+  margin: 0 auto;
+  background-color: #eeeeee;
+}
+
+header {
+  color:white;
+  background-color: #0336FF;
+  height: 8vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2%;
+  font-weight: lighter;
+  text-shadow: 1px 1px darkblue;
+  z-index: 999;
+}
+
+.logo{
+  font-family: 'Sacramento', cursive;
+  font-size: 2.5rem;
+  font-weight: lighter;
+  text-shadow: 1px 1px darkblue;
+}
+
+.row{
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.code-block{
+  font-size: 2rem;
+  word-spacing: 50%;
+  line-height: 2.5rem;
+  padding: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.yellow-bar{
+  width: 5%;
+  min-width: 50px;
+  height: 70%;
+  background-color: #FFDE03;
+  position: absolute;
+}
+
+.bar-one{
+  bottom: 5vh;
+}
+
+.bar-two{
+  right: 0;
+  top: -8vh;
+}
+
+.blue-btn-block{
+  width: 100%;
+  height: 12vh;
+  background-color: #0336FF;
+  z-index: 999;
+  display: flex;
+  justify-content: space-around;
+  padding: 3vh;
+}
+
+.blue-btn-block button{
+  width: 30%;
+  color: white;
+  font-size: 1.5rem;
+  background-color: #FF1744;
+  border: 2px solid rgb(156, 22, 62);
+  border-radius: 18px;
+}
+
+.blue-btn-block button:hover{
+  background-color: #ff288c;
+  cursor: pointer;
+}
+
+.blue-btn-block button:active{
+  transform:translate(2px, 1px);
+}
+
+.title{
+  background-color: white;
+  padding: 1% 5%;
+  position: relative;
+}
+
+.red-circle {
+  background-color: #ff1744;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: absolute;
+  top: 15%;
+  right: 5%;
+}
+
+.red-circle img{
+  width: 70%;
+  padding: 1%;
+
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: center;
+  text-align: center;
+  background-color: white;
+  padding: 2%;
+}
+
+.row-item{
+  padding: 2% 5%;
+  margin: 10px;
+  background-color: #ececec;
+  border-radius: 12px;
+  border: 1px solid lightgray;
+  position: relative;
+}
+
+.save {
+  width: 30px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+.hide {
+  display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+  .row{
+  width: 100%;
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+  .row{
+  width: 100%;
+  }
+
+  .list {
+    grid-template-columns: repeat(1, auto);
+  }
+
+  .blue-btn-block{
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 22vh;
+    padding: 5%;
+  }
+
+  .blue-btn-block button{
+    width: 70%;
+    margin: 2%;
+  }
+
+  .code-block{
+    height: 70vh;
+    line-height: 4rem;
+  }
+
+}
