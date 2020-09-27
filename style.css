@@ -38,7 +38,6 @@ header {
 
 .code-block{
   font-size: 2rem;
-  word-spacing: 50%;
   line-height: 2.5rem;
   padding: 1%;
   display: flex;
@@ -145,7 +144,7 @@ header {
   display: none;
 }
 
-.bottom-nav{
+footer .bottom-nav {
   width: 100%;
   color:white;
   background-color: #0336FF;
@@ -163,16 +162,40 @@ header {
 }
 
 
-
 @media only screen and (max-width: 1024px) {
   .row{
   width: 100%;
   }
 }
 
+@media only screen and (max-width: 812px) {
+  header{
+  height: 15vh;
+  }
+
+  .code-block{
+    height: 65vh;
+    font-size: 1.8rem;
+    line-height: 3rem;
+  }
+
+  .blue-btn-block{
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 20vh;
+    padding: 2%;
+  }
+}
+
 @media only screen and (max-width: 600px) {
-  .row{
-  width: 100%;
+  header{
+    height: 12vh;
+  }
+
+  .code-block{
+    height: 66vh;
+    font-size: 1.8rem;
+    line-height: 4rem;
   }
 
   .list {
@@ -190,10 +213,4 @@ header {
     width: 70%;
     margin: 2%;
   }
-
-  .code-block{
-    height: 70vh;
-    line-height: 4rem;
-  }
-
 }

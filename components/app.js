@@ -1,35 +1,41 @@
 class App {
-  constructor(data, list){
-    this.data = data;
-    this.list = list;
-    this.handleGetEventSuccess = this.handleGetEventSuccess.bind();
-    this.handleGetEventError = this.handleGetEventError.bind();
+  constructor(userInterest, pexelsApi){
+    this.userInterest = userInterest;
+    this.pexelsApi = pexelsApi;
+    this.handleGetImageSuccess = this.handleGetImageSuccess.bind();
+    this.handleGetImageError = this.handleGetImageError.bind();
   }
 
   start(){
-    this.getEvent();
-    this.list.date();
-    this.list.interest();
-    this.list.addListToPage(data);
+    this.userInterest.list.updateDateTitle();
+    this.userInterest.list.addListToPage(this.userInterest.eventData);
+    console.log(this.userInterest.eventData);
+    this.userInterest.updatePageTitle("Health Wellness Events");
+    this.userInterest.onInterestClick();
+    this.getImage();
   }
 
-  getEvent() {
-    // $.ajax({
-      //   method: "GET",
-      //   url: "https://api.meetup.com/find/upcoming_events?page=20&text="+this.getDataByInterest,
-      //   success: this.handleGetEventSuccess,
-      //   error: this.handleGetEventError
-      // })
-      this.handleGetEventSuccess(data);
-    }
+  getImage() {
+    $.ajax({
+      method: "GET",
+      url: "https://api.pexels.com/v1/search"
+        + "?query=" + this.userInterest.imageStyle,
+      headers:{
+        "authorization": this.pexelsApi
+      },
+      success: this.handleGetImageSuccess,
+      error: this.handleGetImageError
+    })
 
-  handleGetEventSuccess(data){
-    console.log(data);
-    // this.list.addListToPage(data);
   }
 
-  handleGetEventError(error){
+  handleGetImageSuccess(response) {
+    console.log(response)
+    var images = response.photos;
+    this.userInterest.list.images = images;
+  }
+
+  handleGetImageError(error) {
     console.error(error);
   }
-
 }
