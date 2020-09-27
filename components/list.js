@@ -1,11 +1,9 @@
 class List{
-  constructor(eventData){
-    this.eventData = eventData;
-    this.handleInterstClick = this.handleInterstClick.bind();
+  constructor(){
     this.handleSaveClick = this.handleSaveClick.bind();
   }
 
-  date(){
+  updateDateTitle(){
     var date = new Date();
     var currentMonth = date.toLocaleString('default', { month: 'long' });
     var currentDate = date.getDate();
@@ -14,52 +12,30 @@ class List{
     today.textContent = currentDay+", "+currentMonth+" "+ currentDate;
   }
 
-  interest(){
-    var notCodeBtn = document.getElementById('notCode');
-    var codeBtn = document.getElementById('code');
-    notCodeBtn.addEventListener('click', this.handleInterstClick);
-    codeBtn.addEventListener('click', this.handleInterstClick);
-  }
-
-  handleInterstClick(e){
-    e.preventDefault();
-    if (e.target.textContent === "!CODE"){
-      var userInterest = "wellness";
-      var titleContent = "Health Wellness Events";
-    } else {
-      userInterest = "code";
-      titleContent = "Tech Ralated Events";
-    }
-    this.updateTitle(titleContent);
-    this.getDataByInterest(userInterest);
-  }
-
-  updateTitle(titleContent){
-    var titleElt = document.getElementById('title');
-    titleElt.textContent = titleContent;
-  }
-
-  renderList(listData){
+  renderList(listData, index){
     var titleContent = listData.name;
     var dayContent = listData.local_date;
     var timeContent = listData.local_time;
 
+    var coverImgElt = document.createElement('img')
     var rowElt = document.createElement('div');
     var titleElt = document.createElement('h3');
     var dayElt = document.createElement('h4');
     var timeElt = document.createElement('h4');
     var heartElt = document.createElement('img');
 
+    coverImgElt.src = this.generateImage(index);
     rowElt.setAttribute('class', 'row-item');
     titleElt.textContent = titleContent;
     dayElt.textContent = dayContent;
     timeElt.textContent = timeContent;
     heartElt.classList.add('save');
-    heartElt.setAttribute('src', 'icon/heart-hollow.png');
-    heartElt.setAttribute('alt', 'save this event');
-    heartElt.setAttribute('id', 'hollow');
+    heartElt.src = 'icon/heart-hollow.png';
+    heartElt.alt = 'save this event';
+    heartElt.id = 'hollow';
     heartElt.addEventListener('click', this.handleSaveClick);
 
+    rowElt.appendChild(coverImgElt);
     rowElt.appendChild(titleElt);
     rowElt.appendChild(dayElt);
     rowElt.appendChild(timeElt);
@@ -70,26 +46,34 @@ class List{
 
   addListToPage(data){
     var listAreaElt = document.getElementById('listArea');
+    listAreaElt.innerHTML="";
     for (var i=0; i<data.events.length; i++){
-      var listElt = this.renderList(data.events[i]);
+      var listElt = this.renderList(data.events[i], i);
       listAreaElt.appendChild(listElt);
     }
   }
 
+  generateImage(index){
+    if (index <= this.images.length) {
+      var imageUrl = this.images[index].src.middle;
+    } else {
+      var randomIndex = Math.floor(Math.random() * this.images.length);
+      imageUrl = this.images[randomIndex].src.middle;
+    }
+    return imageUrl;
+  }
+
   handleSaveClick(e){
     var heartElt = e.target;
-    if (heartElt.id == 'hollow'){
-      heartElt.setAttribute('src', 'icon/heart-red.png');
-      heartElt.setAttribute('alt', 'unsave this event');
-      heartElt.setAttribute('id', 'red');
+    if (heartElt.id === 'hollow'){
+      heartElt.src = 'icon/heart-red.png';
+      heartElt.alt = 'unsave this event';
+      heartElt.id = 'red';
     } else {
-      heartElt.setAttribute('src', 'icon/heart-hollow.png');
-      heartElt.setAttribute('alt', 'save this event');
-      heartElt.setAttribute('id', 'hollow');
+      heartElt.src = 'icon/heart-hollow.png';
+      heartElt.alt = 'save this event';
+      heartElt.id = 'hollow';
     }
   }
 
-  getDataByInterest(userInterest){
-    this.userInterest = userInterest;
-  }
 }
