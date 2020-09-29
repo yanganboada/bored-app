@@ -1,7 +1,6 @@
 class UserInterest {
-  constructor(techData, wellnessData, list){
+  constructor(techData, wellnessData){
     this.handleInterestClick = this.handleInterestClick.bind(this);
-    this.list = list;
     this.techData = techData;
     this.wellnessData = wellnessData;
     this.eventData = this.wellnessData;
@@ -16,7 +15,6 @@ class UserInterest {
   }
 
   handleInterestClick(e){
-    console.log(e);
     e.preventDefault();
     if (e.target.textContent === "!CODE") {
       var titleContent = "Health Wellness Events";
@@ -28,7 +26,11 @@ class UserInterest {
       this.eventData = this.techData;
     }
     this.updatePageTitle(titleContent);
-    this.list.addListToPage(this.eventData);
+    var currentData ={
+      eventData: this.eventData,
+      imageStyle: this.imageStyle
+    }
+    return currentData;
   }
 
   updatePageTitle(titleContent) {
