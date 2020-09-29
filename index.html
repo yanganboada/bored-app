@@ -5,9 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bored - Local Event Lookup for Developer</title>
-  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Sacramento&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="modal.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -37,24 +38,40 @@
           <h4 id="today"></h4>
           <h2 id="title"></h2>
         </div>
-        <div class="red-circle">
-          <img class="map-view" src="./icon/map.png" alt="view events on map">
-          <img class="list-view hide" src="./icon/list.png" alt="view event by list">
+        <div class="red-circle" id="view">
+          <img class="view map-view" id="mapView" src="./icon/map.png" alt="view events on map">
         </div>
       </div>
       <div class="row list" id="listArea">
         <!-- event list area -->
       </div>
+      <div class="row map-row">
+        <div class="current-map hide" id="map"></div>
+      </div>
     </main>
-    <footer>
+    <div class="saved" id="savedEvent">
+      <img src="./icon/heart-white.png" alt="Saved Events">
+      <h5>Saved Events</h5>
+    </div>
+    <!-- <footer>
       <div class="bottom-nav">
         <img src="./icon/heart-white.png" alt="saved events">
         <h1 class="logo">Bored</h1>
         <img src="./icon/heart-white.png" alt="saved events">
       </div>
-    </footer>
+    </footer> -->
   </div>
-
+  <div class="modal hide" id="saveModal">
+    <div class="modal-content">
+      <div class="modal-title">
+        <h1>Saved Events</h1>
+      </div>
+      <div class="list modal-list" id="saved">
+        <!-- saved event list area -->
+      </div>
+      <button class="close">Close</button>
+    </div>
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"
     integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ=="
     crossorigin="anonymous"></script>
@@ -63,10 +80,11 @@
   <script src="components/save.js"></script>
   <script src="components/list.js"></script>
   <script src="components/userInterest.js"></script>
-  <script src="components/map.js"></script>
+  <script src="components/currentMap.js"></script>
   <script src="components/config.js"></script>
   <script src="components/app.js"></script>
   <script src="main.js"></script>
+
 </body>
 
 </html>

@@ -98,6 +98,7 @@ header {
 
 .red-circle {
   background-color: #ff1744;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
   width: 70px;
   height: 70px;
   display: flex;
@@ -105,14 +106,30 @@ header {
   align-items: center;
   border-radius: 50%;
   position: absolute;
-  top: 15%;
+  top: 25%;
   right: 5%;
+  cursor: pointer;
+}
+
+.red-circle:hover {
+  background-color: #ff2f58f1;
 }
 
 .red-circle img{
   width: 70%;
   padding: 1%;
+}
 
+.map-row{
+  background-color: white;
+  padding: 0 2% 5%;
+}
+
+.current-map{
+  height: 65vh;
+  border: 1px solid lightgray;
+  border-radius: 18px;
+  margin: 0 auto;
 }
 
 .list {
@@ -125,12 +142,48 @@ header {
 }
 
 .row-item{
-  padding: 2% 5%;
   margin: 10px;
-  background-color: #ececec;
+  background-color: #f5f5f5;
   border-radius: 12px;
   border: 1px solid lightgray;
   position: relative;
+  display: flex;
+}
+
+.row-item:hover{
+  background-color:rgb(243, 250, 255);
+  translate: .5s;
+}
+
+.cover {
+  width: 50%;
+  max-height: 250px;
+  border-radius: 12px;
+}
+
+.tag {
+  position: absolute;
+  border-radius: 12px;
+  padding: 1% 2%;
+  left: 3%;
+  text-transform: uppercase;
+  font-size: .8rem;
+  font-size: .8rem;
+  font-weight: 900;
+  color: white;
+}
+
+.online{
+  background-color: #0335ffe5;
+}
+
+.local{
+  background-color: #ff1745e7;
+}
+
+.row-content{
+ padding: 1% 2%;
+ margin: 0 auto;
 }
 
 .save {
@@ -161,10 +214,37 @@ footer .bottom-nav {
   height: 30px;
 }
 
+.saved {
+  background-color: #0336FF;
+  width: 120px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  color: white;
+  text-transform: uppercase;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.saved:hover {
+  background-color: #1c49fbef;
+  cursor: pointer;
+}
+
+.saved img{
+  width: 50%;
+  padding: 10%;
+}
 
 @media only screen and (max-width: 1024px) {
   .row{
   width: 100%;
+  }
+  .modal-content{
+  width: 90%;
   }
 }
 
