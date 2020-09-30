@@ -5,6 +5,7 @@ class UserInterest {
     this.wellnessData = wellnessData;
     this.eventData = this.wellnessData;
     this.imageStyle = "wellness"
+    this.imageCallback = null;
   }
 
   onInterestClick(){
@@ -14,6 +15,10 @@ class UserInterest {
     codeBtn.addEventListener('click', this.handleInterestClick);
   }
 
+  setImageCallback(imageCallback){
+    this.imageCallback = imageCallback;
+  }
+
   handleInterestClick(e){
     e.preventDefault();
     if (e.target.textContent === "!CODE") {
@@ -21,16 +26,12 @@ class UserInterest {
       this.imageStyle = "wellness"
       this.eventData = this.wellnessData;
     } else {
-      titleContent = "Tech Ralated Events";
+      titleContent = "Tech Related Events";
       this.imageStyle = "coding+tech";
       this.eventData = this.techData;
     }
     this.updatePageTitle(titleContent);
-    var currentData ={
-      eventData: this.eventData,
-      imageStyle: this.imageStyle
-    }
-    return currentData;
+    this.imageCallback();
   }
 
   updatePageTitle(titleContent) {

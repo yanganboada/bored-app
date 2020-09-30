@@ -28,6 +28,9 @@
 }
 
 .modal-list{
+  padding: 5%;
+  overflow-y: auto;
+  max-height: 60vh;
   width: 100%;
 }
 

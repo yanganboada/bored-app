@@ -20,6 +20,7 @@ class App {
     this.map.onViewTypeClick();
     this.map.addScriptTag();
     this.userInterest.onInterestClick();
+    this.userInterest.setImageCallback(this.getImage);
   }
 
   getImage() {
@@ -37,11 +38,7 @@ class App {
 
   handleGetImageSuccess(response) {
     var images = response.photos;
-    if (this.currentData !== this.userInterest.eventData){
-      this.list.addListToPage(this.userInterest.eventData, images)
-    } else {
-      this.list.addListToPage(this.currentData(), images)
-    }
+    this.list.addListToPage(this.userInterest.eventData, images)
   }
 
   handleGetImageError(error) {
