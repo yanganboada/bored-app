@@ -6,6 +6,7 @@ class UserInterest {
     this.eventData = this.wellnessData;
     this.imageStyle = "wellness"
     this.imageCallback = null;
+    this.mapCallback =null;
   }
 
   onInterestClick(){
@@ -17,6 +18,10 @@ class UserInterest {
 
   setImageCallback(imageCallback){
     this.imageCallback = imageCallback;
+  }
+
+  setMapCallback(mapCallback){
+    this.mapCallback = mapCallback;
   }
 
   handleInterestClick(e){
@@ -32,6 +37,7 @@ class UserInterest {
     }
     this.updatePageTitle(titleContent);
     this.imageCallback();
+    this.mapCallback();
   }
 
   updatePageTitle(titleContent) {
