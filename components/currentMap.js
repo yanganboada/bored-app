@@ -1,7 +1,7 @@
 class CurrentMap {
   constructor(userInterest, mapApi) {
     this.handleViewTypeClick = this.handleViewTypeClick.bind(this);
-    // this.initMap = this.initMap.bind(this);
+    this.initMap = this.initMap.bind(this);
     this.userInterest = userInterest;
     this.mapApi = mapApi;
     this.data = userInterest.eventData;

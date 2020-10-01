@@ -3,7 +3,7 @@ class App {
     this.handleGetImageSuccess = this.handleGetImageSuccess.bind(this);
     this.handleGetImageError = this.handleGetImageError.bind(this);
     this.getImage = this.getImage.bind(this);
-
+    this.updateMap = this.updateMap.bind(this);
     this.list = list;
     this.userInterest = userInterest;
     this.savedEvent = savedEvent;
@@ -15,11 +15,13 @@ class App {
     this.getImage();
     this.list.updateDateTitle();
     this.userInterest.updatePageTitle("Health Wellness Events");
+    this.userInterest.onInterestClick();
+    this.userInterest.setImageCallback(this.getImage);
+    this.userInterest.setMapCallback(this.updateMap);
     this.savedEvent.onSavedClick();
     this.savedEvent.onModalCloseClick();
     this.map.onViewTypeClick();
     this.map.addScriptTag();
-    this.userInterest.onInterestClick();
   }
 
   getImage() {
@@ -37,15 +39,16 @@ class App {
 
   handleGetImageSuccess(response) {
     var images = response.photos;
-    if (this.currentData !== this.userInterest.eventData){
-      this.list.addListToPage(this.userInterest.eventData, images)
-    } else {
-      this.list.addListToPage(this.currentData(), images)
-    }
+    this.list.addListToPage(this.userInterest.eventData, images)
   }
 
   handleGetImageError(error) {
     console.error(error);
+  }
+
+  updateMap(){
+    this.map.data = this.userInterest.eventData;
+    this.map.initMap();
   }
 
 }
