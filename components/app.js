@@ -18,6 +18,7 @@ class App {
     this.userInterest.onInterestClick();
     this.userInterest.setImageCallback(this.getImage);
     this.userInterest.setMapCallback(this.updateMap);
+    this.savedEvent.onSavedClick();
     this.savedEvent.onModalCloseClick();
     this.map.onViewTypeClick();
     this.map.addScriptTag();
