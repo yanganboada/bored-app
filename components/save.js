@@ -15,6 +15,11 @@ class Save{
     modalElt.classList.remove('hide');
     var modalListElt = document.getElementById('saved');
     for (var i = 0; i<localStorage.length; i++){
+      if (!localStorage.length){
+        var emptyElt = document.createElement('p');
+        emptyElt.textContent = "Currently No Saved Event"
+        modalListElt.appendChild(emptyElt);
+      }
       var key = localStorage.key(i);
       var value = localStorage.getItem(key);
       modalListElt.innerHTML += value;

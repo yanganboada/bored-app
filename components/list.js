@@ -35,7 +35,7 @@ class List{
     titleElt.textContent = titleContent;
     dayElt.textContent = dayContent;
     timeElt.textContent = timeContent;
-    detailElt.textContent = 'View on Meetup>'
+    detailElt.textContent = 'View Details>'
     detailElt.target = "_blank"
     detailElt.setAttribute('class','view-on-meetup')
     detailElt.setAttribute('href', listData.link)

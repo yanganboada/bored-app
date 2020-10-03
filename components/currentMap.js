@@ -54,11 +54,9 @@ class CurrentMap {
       mapId: this.mapApi.mapId,
     });
 
-    var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     for (var i = 0; i<locations.length; i++){
       var markers = new google.maps.Marker({
         position: {'lat':locations[i].lat, 'lng':locations[i].lng},
-        label: labels[i % labels.length],
         title: locations[i].name,
         map: map
       })
