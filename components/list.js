@@ -23,6 +23,7 @@ class List{
     var titleElt = document.createElement('h3');
     var dayElt = document.createElement('h4');
     var timeElt = document.createElement('h4');
+    var detailElt = document.createElement('a');
     var heartElt = document.createElement('img');
     var onlineElt = document.createElement('p');
 
@@ -34,6 +35,10 @@ class List{
     titleElt.textContent = titleContent;
     dayElt.textContent = dayContent;
     timeElt.textContent = timeContent;
+    detailElt.textContent = 'View on Meetup>'
+    detailElt.target = "_blank"
+    detailElt.setAttribute('class','view-on-meetup')
+    detailElt.setAttribute('href', listData.link)
     heartElt.classList.add('save');
     heartElt.src = 'icon/heart-hollow.png';
     heartElt.alt = 'save this event';
@@ -43,6 +48,7 @@ class List{
     rowContentElt.appendChild(titleElt);
     rowContentElt.appendChild(dayElt);
     rowContentElt.appendChild(timeElt);
+    rowContentElt.appendChild(detailElt);
     rowElt.appendChild(coverImgElt);
     rowElt.appendChild(rowContentElt);
     rowElt.appendChild(heartElt);

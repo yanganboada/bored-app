@@ -32,6 +32,14 @@ class App {
       headers:{
         "authorization": this.pexelsApi
       },
+      beforeSend: function () {
+        var loaderElt = document.getElementById('loader')
+        loaderElt.classList.remove('hide');
+      },
+      complete: function () {
+        var loaderElt = document.getElementById('loader')
+        loaderElt.classList.add('hide');
+      },
       success: this.handleGetImageSuccess,
       error: this.handleGetImageError
     })
