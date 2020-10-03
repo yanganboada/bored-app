@@ -17,13 +17,22 @@ class CurrentMap {
     var currentMapElt = document.getElementById('map');
     var listRowElt = document.getElementById('listArea');
     var currentViewElt = document.querySelector('.view');
+    var titleRowElt = document.querySelector('.list-title')
+    var localEventElt = document.createElement('h4');
+    localEventElt.id = 'mapViewNote'
+
+    currentMapElt.appendChild(localEventElt);
     if (currentViewElt.id === 'mapView') {
+      localEventElt.textContent = "Map View (Local Events Only)"
+      titleRowElt.appendChild(localEventElt)
       currentViewElt.src = 'icon/list.png';
       currentViewElt.alt = 'List View';
       currentViewElt.id = 'listView';
       listRowElt.classList.add('hide');
       currentMapElt.classList.remove('hide');
     } else if (currentViewElt.id === 'listView') {
+      var mapViewNoteElt = document.getElementById('mapViewNote')
+      mapViewNoteElt.remove();
       currentViewElt.src = 'icon/map.png';
       currentViewElt.alt = 'Map View';
       currentViewElt.id = 'mapView';
@@ -33,7 +42,7 @@ class CurrentMap {
     }
 
   initMap() {
-    var locations = this.getLocationList();
+    var locations = this.getLocationList()
     var centerLatLng = {
       lat: this.data.city.lat,
       lng: this.data.city.lon
@@ -48,21 +57,23 @@ class CurrentMap {
     var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     for (var i = 0; i<locations.length; i++){
       var markers = new google.maps.Marker({
-        position: locations[i],
+        position: {'lat':locations[i].lat, 'lng':locations[i].lng},
         label: labels[i % labels.length],
+        title: locations[i].name,
         map: map
       })
     }
     return markers;
   }
-
   getLocationList() {
     var locations = [];
+
     for (var i = 0; i < this.data.events.length; i++) {
       if (!this.data.events[i].is_online_event){
         var lat = this.data.events[i].group.lat;
         var lng = this.data.events[i].group.lon;
-        locations.push({ 'lat':lat, 'lng':lng });
+        var name = this.data.events[i].name
+        locations.push({ 'lat':lat, 'lng':lng, 'name': name });
       }
     }
     return locations;
