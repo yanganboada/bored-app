@@ -1,16 +1,15 @@
-class send{
+class Send {
   constructor (){
-    this.handleSendClick = this.handleSendClick.bind(this);
-
+    this.handSendClick = this.handSendClick.bind(this);
   }
 
   onSendClick(){
-    var sendListElt = document.getElementById('sendList');
+    var sendListElt = document.querySelector('.send-list');
     sendListElt.addEventListener('click', this.handleSendClick);
   }
 
-  handSendClick(){
-
+  handSendClick(e){
+    console.log(e);
   }
 
 }

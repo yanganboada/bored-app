@@ -1,5 +1,5 @@
 class App {
-  constructor(list, userInterest, savedEvent, map, pexelsApi){
+  constructor(list, userInterest, savedEvent, sendEvent, map, pexelsApi){
     this.handleGetImageSuccess = this.handleGetImageSuccess.bind(this);
     this.handleGetImageError = this.handleGetImageError.bind(this);
     this.getImage = this.getImage.bind(this);
@@ -7,6 +7,7 @@ class App {
     this.list = list;
     this.userInterest = userInterest;
     this.savedEvent = savedEvent;
+    this.sendEvent = sendEvent;
     this.map = map;
     this.pexelsApi = pexelsApi;
   }
@@ -20,6 +21,7 @@ class App {
     this.userInterest.setMapCallback(this.updateMap);
     this.savedEvent.onSavedClick();
     this.savedEvent.onModalCloseClick();
+    this.sendEvent.onSendClick();
     this.map.onViewTypeClick();
     this.map.addScriptTag();
   }

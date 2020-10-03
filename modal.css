@@ -20,12 +20,34 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  animation: modalup 5s ease-in-out;
+  animation: modalup .7s ease-in-out;
 }
 
 @keyframes modalup {
-  from {bottom: -80vh;}
-  to {bottom: 0;}
+  0% {
+    transform: translateY(100%);
+    opacity: .5;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.modal-hide{
+  display: none;
+  animation: modaldown .7s ease-in-out;
+}
+
+@keyframes modaldown {
+  0% {
+    transform: translateY(100%);
+    opacity: .5;
+  }
+  100% {
+    transform: translateY(1200%);
+    opacity: 1;
+  }
 }
 
 .modal-title{
