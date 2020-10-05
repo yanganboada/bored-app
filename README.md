@@ -19,8 +19,6 @@ Try the application live at [not ready yet](https://yanganboada.com)
 - User can view local hosted events on map.
 - User can save the favorite event.
 - User can view saved events.
-- User can delete saved events.
-- User can share saved events.
 
 ## Preview
 
