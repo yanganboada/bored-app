@@ -65,13 +65,14 @@ class List{
     return rowElt;
   }
 
-  addListToPage(data, images){
+  addListToPage(data, images, interest){
     console.log(data, images)
     this.resetRow();
     var listAreaElt = document.getElementById('listArea');
     for (var i=0; i<data.events.length; i++){
       var image = this.generateImage(images, i);
-      var listElt = this.renderList(data.events[i], image, i);
+      var interestIndex = interest+i
+      var listElt = this.renderList(data.events[i], image, interestIndex);
       listAreaElt.appendChild(listElt);
     }
   }
@@ -92,6 +93,7 @@ class List{
   }
 
   handleSaveClick(e){
+    e.preventDefault();
     var heartElt = e.target;
     var rowDivElt = heartElt.parentElement;
     var value = rowDivElt.outerHTML;

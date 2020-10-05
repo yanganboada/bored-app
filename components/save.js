@@ -24,6 +24,10 @@ class Save{
       var value = localStorage.getItem(key);
       modalListElt.innerHTML += value;
     }
+    var deleteElt = document.createElement('img')
+    deleteElt.src = 'icon/heart-red.png';
+    deleteElt.alt = 'Delete this Event';
+    deleteElt.id = 'delete';
   }
 
   onModalCloseClick(){

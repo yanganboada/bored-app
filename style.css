@@ -30,6 +30,11 @@ header {
   text-shadow: 1px 1px darkblue;
 }
 
+.logo a{
+  text-decoration: none;
+  color: white;
+}
+
 .row{
   width: 80%;
   margin: 0 auto;
@@ -284,37 +289,56 @@ footer .bottom-nav {
 
 @media only screen and (max-width: 812px) {
   header{
-  height: 12vh;
+  height: 15vh;
   }
 
   .code-block{
     height: 68vh;
     font-size: 1.8rem;
     line-height: 3rem;
+  }
+
+  .list {
     grid-template-columns: repeat(1, auto);
   }
 
   .blue-btn-block{
     flex-wrap: wrap;
     justify-content: space-around;
-    height: 20vh;
+    height: 20%;
     padding: 2%;
+  }
+
+  .modal-content {
+    height: 88vh;
+  }
+
+  .modal-list{
+    max-height: 40vh;
   }
 }
 
 @media only screen and (max-width: 600px) {
   header{
-    height: 12vh;
+    height: 10vh;
   }
 
   .code-block{
-    height: 66vh;
+    height: 68vh;
     font-size: 1.8rem;
     line-height: 4rem;
   }
 
   .list {
     grid-template-columns: repeat(1, auto);
+  }
+
+  .row-item{
+    font-size: .7rem;
+  }
+
+  .title{
+    font-size: 90%;
   }
 
   .blue-btn-block{
@@ -327,5 +351,9 @@ footer .bottom-nav {
   .blue-btn-block button{
     width: 70%;
     margin: 2%;
+  }
+
+  .modal-list{
+    max-height: 65vh;
   }
 }
