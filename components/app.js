@@ -49,7 +49,7 @@ class App {
 
   handleGetImageSuccess(response) {
     var images = response.photos;
-    this.list.addListToPage(this.userInterest.eventData, images)
+    this.list.addListToPage(this.userInterest.eventData, images, this.userInterest.imageStyle);
   }
 
   handleGetImageError(error) {
