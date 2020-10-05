@@ -14,23 +14,20 @@ class Save{
     var modalElt = document.getElementById('saveModal');
     modalElt.classList.remove('hide');
     var modalListElt = document.getElementById('saved');
-    var savedArray =localStorage.getItem('savedEvent');
-    for (var i = 0; i < savedArray.length; i++){
-      if (!savedArray.length){
+    for (var i = 0; i<localStorage.length; i++){
+      if (!localStorage.length){
         var emptyElt = document.createElement('p');
         emptyElt.textContent = "Currently No Saved Event"
         modalListElt.appendChild(emptyElt);
       }
-      // var key = localStorage.key(i);
-      // var value = localStorage.getItem(key);
-      modalListElt+=savedArray[i].innerHTML;
+      var key = localStorage.key(i);
+      var value = localStorage.getItem(key);
+      modalListElt.innerHTML += value;
     }
     var deleteElt = document.createElement('img')
-    deleteElt.src = 'icon/delete.png';
-    deleteElt.alt = 'delete this event';
+    deleteElt.src = 'icon/heart-red.png';
+    deleteElt.alt = 'Delete this Event';
     deleteElt.id = 'delete';
-    var heartElt = document.querySelector('.save');
-    // modalListElt.replaceChild(heartElt, deleteElt);
   }
 
   onModalCloseClick(){

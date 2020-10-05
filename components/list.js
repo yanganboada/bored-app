@@ -1,7 +1,6 @@
 class List{
   constructor(){
-    this.handleSaveClick = this.handleSaveClick.bind(this);
-    this.savedEvent = [];
+    this.handleSaveClick = this.handleSaveClick.bind();
   }
 
   updateDateTitle(){
@@ -67,6 +66,7 @@ class List{
   }
 
   addListToPage(data, images, interest){
+    console.log(data, images)
     this.resetRow();
     var listAreaElt = document.getElementById('listArea');
     for (var i=0; i<data.events.length; i++){
@@ -97,25 +97,20 @@ class List{
     var heartElt = e.target;
     var rowDivElt = heartElt.parentElement;
     var value = rowDivElt.outerHTML;
-    // var key = heartElt.parentElement.dataset.index;
-    console.log(value);
+    var key = heartElt.parentElement.dataset.index;
+    console.log(key, value);
     console.log(localStorage)
     if (heartElt.id === 'hollow'){
       heartElt.src = 'icon/heart-red.png';
       heartElt.alt = 'Un-save This Event';
       heartElt.id = 'red';
-      this.savedEvent.push(value);
+      localStorage.setItem(key, value);
     } else {
       heartElt.src = 'icon/heart-hollow.png';
       heartElt.alt = 'Save This Event';
       heartElt.id = 'hollow';
-      var index = this.savedEvent.indexOf(value);
-      if(index != -1){
-        this.savedEvent.splice(index, 1);
-      }
+      localStorage.removeItem(key);
     }
-    console.log(this.savedEvent);
-    localStorage.setItem('savedEvent', this.savedEvent);
   }
 
 }
