@@ -22,4 +22,4 @@ Try the application live at [not ready yet](https://yanganboada.com)
 
 ## Preview
 
-![Bored App Demo](assets/boredAppDemo.gif)
+![Bored App Demo](boredAppDemo.gif)
