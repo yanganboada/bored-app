@@ -7,6 +7,7 @@ Local Event Lookup Application for Developers to Balance Their Daily Life
 - Jquery v3
 - HTML5
 - CSS3
+- Figma
 
 ## Live Demo
 
