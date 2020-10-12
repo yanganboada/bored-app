@@ -11,7 +11,7 @@ Local Event Lookup Application for Developers to Balance Their Daily Life
 
 ## Live Demo
 
-Try the application live at [not ready yet](https://yanganboada.com)
+Try the application live at [comming soon](https://yanganboada.com)
 
 ## Features
 
