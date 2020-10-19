@@ -37,6 +37,6 @@ Try the application live at [comming soon](https://yanganboada.com)
 - Getting Started
 - Clone the repository.
 - git clone https://github.com/yanganboada/bored-app
-- cd bored
+- cd bored-app
 - Register for personal API keys at: Meetup API, Google Map API and Pexels API.
 - Access application from index.html in code editor.
