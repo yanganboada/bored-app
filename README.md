@@ -17,7 +17,7 @@ Local Event Lookup Application for Developers to Balance Their Daily Life
 
 ## Live Demo
 
-Try the application live at [comming soon](https://yanganboada.com)
+Try the application live at [https://yanganboada.github.io/bored-app/](https://yanganboada.github.io/bored-app/)
 
 ## Features
 
@@ -34,13 +34,13 @@ Try the application live at [comming soon](https://yanganboada.com)
 
 ## Development
 
-1. Getting Started.
-1. Clone the repository.
+- Getting Started.
+- Clone the repository.
 
 ``` 
   git clone https://github.com/yanganboada/bored-app
   cd bored-app
 ```
 
-1. Register for personal API keys at: Google Map API, Pexels API and Emailjs API.
-1. Access application from index.html in code editor.
+- Register for personal API keys at: [Google Map API](https://cloud.google.com/maps-platform/), [Pexels API](https://www.pexels.com/api/) and [Emailjs API](https://dashboard.emailjs.com/sign-up).
+- Access application from index.html in code editor.
