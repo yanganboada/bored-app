@@ -28,7 +28,7 @@ Try the application live at [https://yanganboada.github.io/bored-app/](https://y
 - User can view local hosted events on map
 - User can save the favorite event
 - User can view saved events
-- User can send event by email
+- User can send saved events to email
 
 
 ## Preview
