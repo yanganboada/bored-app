@@ -30,6 +30,11 @@ header {
   text-shadow: 1px 1px darkblue;
 }
 
+.logo a{
+  text-decoration: none;
+  color: white;
+}
+
 .row{
   width: 80%;
   margin: 0 auto;
@@ -74,6 +79,7 @@ header {
 
 .blue-btn-block button{
   width: 30%;
+  margin: 0.5%;
   color: white;
   font-size: 1.5rem;
   background-color: #FF1744;
@@ -220,17 +226,17 @@ footer .bottom-nav {
 
 .saved {
   background-color: #0336FF;
-  width: 120px;
+  width: 100px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   border-radius: 50%;
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: 25px;
+  right: 25px;
   color: white;
   text-transform: uppercase;
-  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.3);
 }
 
 .saved:hover {
@@ -274,47 +280,76 @@ footer .bottom-nav {
 }
 
 @media only screen and (max-width: 1024px) {
-  .row{
-  width: 100%;
-  }
-  .modal-content{
-  width: 90%;
-  }
-}
 
-@media only screen and (max-width: 812px) {
   header{
-  height: 12vh;
+    height: 8vh;
+  }
+
+  .row{
+    width: 100%;
   }
 
   .code-block{
-    height: 68vh;
+    height: 35vh;
     font-size: 1.8rem;
     line-height: 3rem;
-    grid-template-columns: repeat(1, auto);
   }
 
   .blue-btn-block{
     flex-wrap: wrap;
     justify-content: space-around;
-    height: 20vh;
+    height: 10vh;
     padding: 2%;
+  }
+
+  .modal-content {
+    width: 90%;
+    height: 85vh;
+  }
+
+}
+
+@media only screen and (max-width: 812px) {
+
+  .code-block{
+    height: 35vh;
+  }
+
+  .list {
+    grid-template-columns: repeat(1, auto);
+  }
+
+  .modal-content {
+    height: 88vh;
+  }
+
+  .modal-list{
+    height: 50vh;
+    max-height: 50vh;
   }
 }
 
 @media only screen and (max-width: 600px) {
   header{
-    height: 12vh;
+    height: 10vh;
   }
 
   .code-block{
-    height: 66vh;
+    height: 68vh;
     font-size: 1.8rem;
     line-height: 4rem;
   }
 
   .list {
     grid-template-columns: repeat(1, auto);
+  }
+
+  .row-item{
+    font-size: .7rem;
+  }
+
+  .title{
+    font-size: 90%;
   }
 
   .blue-btn-block{
@@ -327,5 +362,34 @@ footer .bottom-nav {
   .blue-btn-block button{
     width: 70%;
     margin: 2%;
+  }
+
+  .modal-btn{
+    margin: 1% 0 2% 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .modal-content {
+    max-height: 85vh;
+    width: 98%;
+  }
+
+  .modal-list{
+    max-height: 60vh;
+  }
+
+  .saved {
+    width: 60px;
+    height: 60px;
+  }
+
+  .saved img{
+    width: 83%;
+    padding: 17%;
+  }
+
+  .saved h6 {
+    display: none;
   }
 }

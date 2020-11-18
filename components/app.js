@@ -1,15 +1,17 @@
 class App {
-  constructor(list, userInterest, savedEvent, sendEvent, map, pexelsApi){
+  constructor(list, userInterest, savedEvent, map, pexelsApi, emailJsApi, recaptcha){
     this.handleGetImageSuccess = this.handleGetImageSuccess.bind(this);
     this.handleGetImageError = this.handleGetImageError.bind(this);
     this.getImage = this.getImage.bind(this);
     this.updateMap = this.updateMap.bind(this);
+    this.sendEmail = this.sendEmail.bind(this);
     this.list = list;
     this.userInterest = userInterest;
     this.savedEvent = savedEvent;
-    this.sendEvent = sendEvent;
     this.map = map;
     this.pexelsApi = pexelsApi;
+    this.emailJsApi = emailJsApi;
+    this.recaptcha = recaptcha;
   }
 
   start(){
@@ -21,7 +23,8 @@ class App {
     this.userInterest.setMapCallback(this.updateMap);
     this.savedEvent.onSavedClick();
     this.savedEvent.onModalCloseClick();
-    this.sendEvent.onSendClick();
+    this.savedEvent.onSendClick();
+    this.savedEvent.setSendEmailCallback(this.sendEmail);
     this.map.onViewTypeClick();
     this.map.addScriptTag();
   }
@@ -49,7 +52,7 @@ class App {
 
   handleGetImageSuccess(response) {
     var images = response.photos;
-    this.list.addListToPage(this.userInterest.eventData, images)
+    this.list.addListToPage(this.userInterest.eventData, images, this.userInterest.imageStyle);
   }
 
   handleGetImageError(error) {
@@ -59,6 +62,31 @@ class App {
   updateMap(){
     this.map.data = this.userInterest.eventData;
     this.map.initMap();
+  }
+
+  sendEmail(email, dataHtml){
+    var data = {
+      service_id: this.emailJsApi.serviceId,
+      template_id: 'template_bored',
+      user_id: this.emailJsApi.user,
+      template_params: {
+        'to_email': email,
+        'reply_to': 'yanganboada@gmail.com',
+        'my_html': dataHtml
+      }
+    };
+
+    $.ajax('https://api.emailjs.com/api/v1.0/email/send', {
+      type: 'POST',
+      data: JSON.stringify(data),
+      contentType: 'application/json'
+    }).done(function () {
+      var formElt = document.querySelector('.email-div')
+      formElt.remove()
+      alert('Your mail is sent!');
+    }).fail(function (error) {
+      alert('Oops... ' + JSON.stringify(error));
+    });
   }
 
 }
