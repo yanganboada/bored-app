@@ -38,7 +38,8 @@ Try the application live at [comming soon](https://yanganboada.com)
 - Getting Started.
 - Clone the repository.
 
-``` git clone https://github.com/yanganboada/bored-app
+``` 
+git clone https://github.com/yanganboada/bored-app
 cd bored-app.
 ```
 
