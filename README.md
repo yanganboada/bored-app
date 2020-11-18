@@ -3,12 +3,18 @@ Local Event Lookup Application for Developers to Balance Their Daily Life
 
 ## Technologies Used
 
-- Javascript OOP
+- Javascript ES5
+- OOP
 - Jquery v3
-- APIs
 - HTML5
 - CSS3
 - Figma
+- Responsive
+- APIs
+-- Google Map API
+-- Pexels API
+-- Emailjs API
+
 
 ## Live Demo
 
@@ -25,13 +31,16 @@ Try the application live at [comming soon](https://yanganboada.com)
 
 ## Preview
 
-![Bored App V1 Demo](#)
+![Bored App V1 Demo](boredAppDemo.gif)
 
 ## Development
 
 - Getting Started.
 - Clone the repository.
-- git clone https://github.com/yanganboada/bored-app
-- cd bored-app.
+
+``` git clone https://github.com/yanganboada/bored-app
+cd bored-app.
+```
+
 - Register for personal API keys at: Google Map API, Pexels API and Emailjs API.
 - Access application from index.html in code editor.
