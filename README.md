@@ -1,5 +1,6 @@
 # Bored App
-Local Event Lookup Application for Developers to Balance Their Daily Life
+Local Event Lookup Application for Developers to Balance Their Daily Life.
+
 
 ## Technologies Used
 
@@ -19,18 +20,21 @@ Local Event Lookup Application for Developers to Balance Their Daily Life
 
 Try the application live at [https://yanganboada.github.io/bored-app/](https://yanganboada.github.io/bored-app/)
 
+
 ## Features
 
-- User can view a list of upcomming events.
-- User can select event by interest.
-- User can view local hosted events on map.
-- User can save the favorite event.
-- User can view saved events.
-- User can send event by email.
+- User can view a list of upcomming events
+- User can select event by interest
+- User can view local hosted events on map
+- User can save the favorite event
+- User can view saved events
+- User can send event by email
+
 
 ## Preview
 
 ![Bored App V1 Demo](boredAppDemo.gif)
+
 
 ## Development
 
