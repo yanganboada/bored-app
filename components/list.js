@@ -1,5 +1,5 @@
 class List{
-  constructor(){
+  constructor(deleteHandle){
     this.handleSaveClick = this.handleSaveClick.bind();
   }
 
@@ -39,10 +39,9 @@ class List{
     detailElt.target = "_blank"
     detailElt.setAttribute('class','view-on-meetup')
     detailElt.setAttribute('href', listData.link)
-    heartElt.classList.add('save');
+    heartElt.classList.add('save', 'hollow');
     heartElt.src = 'icon/heart-hollow.png';
     heartElt.alt = 'save this event';
-    heartElt.id = 'hollow';
     heartElt.addEventListener('click', this.handleSaveClick);
 
     rowContentElt.appendChild(titleElt);
@@ -66,7 +65,6 @@ class List{
   }
 
   addListToPage(data, images, interest){
-    console.log(data, images)
     this.resetRow();
     var listAreaElt = document.getElementById('listArea');
     for (var i=0; i<data.events.length; i++){
@@ -93,22 +91,24 @@ class List{
   }
 
   handleSaveClick(e){
-    e.preventDefault();
     var heartElt = e.target;
-    var rowDivElt = heartElt.parentElement;
-    var value = rowDivElt.outerHTML;
     var key = heartElt.parentElement.dataset.index;
-    console.log(key, value);
-    console.log(localStorage)
-    if (heartElt.id === 'hollow'){
+    var rowDivElt = heartElt.parentElement;
+    rowDivElt.childNodes[2].setAttribute('src', './icon/delete.png')
+    rowDivElt.childNodes[2].setAttribute('id', key)
+    var value = rowDivElt.outerHTML;
+
+    if (heartElt.classList.contains('hollow')){
       heartElt.src = 'icon/heart-red.png';
       heartElt.alt = 'Un-save This Event';
-      heartElt.id = 'red';
+      heartElt.classList.remove("hollow")
+      heartElt.classList.add('red')
       localStorage.setItem(key, value);
     } else {
       heartElt.src = 'icon/heart-hollow.png';
       heartElt.alt = 'Save This Event';
-      heartElt.id = 'hollow';
+      heartElt.classList.remove('red')
+      heartElt.classList.add('hollow')
       localStorage.removeItem(key);
     }
   }

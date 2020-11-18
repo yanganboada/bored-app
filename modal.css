@@ -13,7 +13,7 @@
   background-color: #eeeeee;
   margin: auto;
   margin-top: 15vh;
-  padding: 20px;
+  padding: 10px 20px;
   border: 1px solid grey;
   border-radius: 18px;
   width: 80%;
@@ -43,7 +43,7 @@
   display: flex;
   width: 100%;
   justify-content: center;
-  font-size: 80%;
+  font-size: 75%;
 }
 
 .modal-list{
@@ -51,32 +51,42 @@
   overflow-y: auto;
   width: 100%;
   border-radius: 12px;
+  max-height: 60vh;
 }
 
 .modal-btn{
   display: flex;
   justify-content: space-between;
   margin: 3%;
+  position: relative;
 }
 
 .modal-btn button{
   color: white;
   text-transform: capitalize;
   width: 150px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   border-radius: 12px;
-  padding: 3% 5%;
+  padding: 2% 4%;
   border: 2px solid rgba(128, 128, 128, 0.4);
-  margin: 3%;
+  margin: 2%;
   max-height: 60px;
 }
 
 .send-list{
-  background-color: red;
+  background-color: #FF1744;
 }
 
 .close {
   background-color: #0336FF;
+}
+
+.send-list:hover,
+.send-list:focus {
+  color: white;
+  background-color: #ff288c;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .close:hover,
@@ -85,4 +95,51 @@
   background-color: #1c49fbef;
   text-decoration: none;
   cursor: pointer;
+}
+
+.email-div{
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100;
+  top: -120%;
+  background-color: #f2f2f2;
+  border: 1px solid grey;
+  border-radius: 12px;
+  animation: emailup .7s ease-in-out;
+}
+
+@keyframes emailup {
+  0% {
+    transform: translateY(100%);
+    opacity: .5;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.email-div div{
+  display: flex;
+  padding: 2%;
+}
+
+.email-div div input {
+  margin: 2%;
+  padding: 2%;
+  width: 90%;
+  border-radius: 12px;
+  border: 1px solid lightgrey;
+}
+
+.email-div div button {
+  background-color: #FF1744;
+  cursor: pointer;
+}
+
+.email-div p{
+  margin: 0 auto 2%;
+  color: red;
+  font-style: italic;
 }
