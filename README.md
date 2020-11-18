@@ -10,10 +10,9 @@ Local Event Lookup Application for Developers to Balance Their Daily Life
 - CSS3
 - Figma
 - Responsive
-- APIs
--- Google Map API
--- Pexels API
--- Emailjs API
+- Google Map API
+- Pexels API
+- Emailjs API
 
 
 ## Live Demo
@@ -35,13 +34,13 @@ Try the application live at [comming soon](https://yanganboada.com)
 
 ## Development
 
-- Getting Started.
-- Clone the repository.
+1. Getting Started.
+1. Clone the repository.
 
 ``` 
-git clone https://github.com/yanganboada/bored-app
-cd bored-app.
+  git clone https://github.com/yanganboada/bored-app
+  cd bored-app
 ```
 
-- Register for personal API keys at: Google Map API, Pexels API and Emailjs API.
-- Access application from index.html in code editor.
+1. Register for personal API keys at: Google Map API, Pexels API and Emailjs API.
+1. Access application from index.html in code editor.
