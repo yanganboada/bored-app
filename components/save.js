@@ -98,7 +98,7 @@ class Save {
     }
     if (!email || !email.includes('@')){
       var errorMessageElt = document.createElement('p');
-      errorMessageElt.id = 'errorMessage'
+      errorMessageElt.id = 'errorMessage';
       var emailFormElt = document.querySelector('.email-div');
       errorMessageElt.textContent= '*Please enter a correct email';
       emailFormElt.appendChild(errorMessageElt);
@@ -106,9 +106,9 @@ class Save {
       var dataDivElt = document.getElementById('saved');
       var data = dataDivElt.childNodes;
       var dataHtml ='<ol>';
-      for(var i=3; i<data.length; i++){
-        if (i===data.length){
-          dataHtml += '<li>'+ data[i].childNodes[1].innerHTML +'</li></ol>';
+      for(var i=0; i < data.length; i++){
+        if (i === data.length-1){
+          dataHtml += '<li>'+ data[i].childNodes[1].innerHTML + '</li></ol>';
         } else {
           dataHtml += '<li>' + data[i].childNodes[1].innerHTML + '</li><br />';
         }

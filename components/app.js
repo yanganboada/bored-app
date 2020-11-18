@@ -81,9 +81,9 @@ class App {
       data: JSON.stringify(data),
       contentType: 'application/json'
     }).done(function () {
+      alert('Your mail is sent!');
       var formElt = document.querySelector('.email-div')
       formElt.remove()
-      alert('Your mail is sent!');
     }).fail(function (error) {
       alert('Oops... ' + JSON.stringify(error));
     });
