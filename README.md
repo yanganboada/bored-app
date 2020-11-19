@@ -26,7 +26,7 @@ Try the application live at [Bore App](https://boredapp.yanganboada.com/)
 - User can view a list of upcomming events
 - User can select event by interest
 - User can view local hosted events on map
-- User can save the favorite event
+- User can save favorite events
 - User can view saved events
 - User can send saved events to email
 
