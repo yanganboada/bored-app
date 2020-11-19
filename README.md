@@ -18,7 +18,7 @@ Local Event Lookup Application for Developers to Balance Their Daily Life.
 
 ## Live Demo
 
-Try the application live at [https://yanganboada.github.io/bored-app/](https://yanganboada.github.io/bored-app/)
+Try the application live at [Bore App](https://boredapp.yanganboada.com/)
 
 
 ## Features
