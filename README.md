@@ -1,5 +1,5 @@
 # Bored App
-- Local Event Lookup Application for Developers to Balance Their Daily Life.
+Local Event Lookup Application for Developers to Balance Their Daily Life.
 
 
 ## Technologies Used
