@@ -4,7 +4,7 @@ Local Event Lookup Application for Developers to Balance Their Daily Life.
 
 ## Technologies Used
 
-- Javascript ES5
+- Javascript
 - OOP
 - Jquery v3
 - HTML5
